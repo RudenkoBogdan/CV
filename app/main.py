@@ -37,4 +37,4 @@ async def resume(request: Request):
             "github": "https://github.com/RudenkoBogdan"
         },
     }
-    return templates.TemplateResponse("resume.html", {"request": request, "data": data})
+    return templates.TemplateResponse("index.html", {"request": request, "data": data})
