@@ -1,195 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bogdan Alenovich Rudenko</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+<head>
+    <meta charset="UTF-8">
+    <title>Bogdan Alenovich Rudenko</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            html, body {
-                height: 100%;
-                width: 100%;
-                overflow-x: hidden; /* Убирает горизонтальную прокрутку */
-                font-family: 'Arial', sans-serif;
-                background-image: url('/app/static/images/background.jpg'); /* Путь к фоновому изображению */
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                color: #ecf0f1; /* Светлый текст */
-            }
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: 'Arial', sans-serif;
+            background-image: url('app/static/images/background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #ecf0f1;
+        }
 
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                padding: 20px;
-                min-height: 100vh;
-            }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            min-height: 100vh;
+        }
 
-            .container {
-                max-width: 900px;
-                width: 100%;
-                margin: auto;
-                background: rgba(30, 39, 46, 0.9); /* Темный фон с прозрачностью */
-                padding: 30px;
-                border-radius: 15px; /* Скругленные углы */
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Тень для глубины */
-                animation: fadeIn 1.5s ease-in-out; /* Анимация появления */
-            }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: auto;
+            background: rgba(30, 39, 46, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s ease-in-out;
+        }
 
-            h1 {
-                font-size: 2.5rem;
-                color: #00a8ff; /* Голубой акцент */
-                margin-bottom: 10px;
-                text-align: center;
-            }
+        h1 {
+            font-size: 2.5rem;
+            color: #00a8ff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
 
-            h2 {
-                font-size: 2rem;
-                color: #4cd137; /* Зеленый акцент */
-                margin-top: 30px;
-                margin-bottom: 15px;
-                border-bottom: 2px solid #576574; /* Линия серого цвета */
-                padding-bottom: 5px;
-            }
+        h2 {
+            font-size: 2rem;
+            color: #4cd137;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #576574;
+            padding-bottom: 5px;
+        }
 
-            ul {
-                list-style: none;
-                padding: 0;
-            }
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
 
-            ul li {
-                background: #3d3d3d; /* Темный фон элемента */
-                margin: 10px 0;
-                padding: 15px;
-                border-left: 6px solid #00a8ff; /* Голубая линия */
-                font-size: 1rem;
-                border-radius: 5px;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
+        hr {
+            border: none;
+            height: 2px;
+            background: #00a8ff;
+            margin: 20px 0;
+        }
 
-            ul li:hover {
-                transform: translateX(5px); /* Лёгкий сдвиг при наведении */
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
 
-            ul li:nth-child(even) {
-                border-left: 6px solid #4cd137; /* Зеленый акцент */
-            }
+        ul li {
+            background: #3d3d3d;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 6px solid #00a8ff;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-            ul li:nth-child(odd) {
-                margin-left: 15px; /* Смещение для нечетных элементов */
-            }
+        ul li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
 
-            .contact-info {
-                margin-top: 30px;
-            }
+        ul li:nth-child(even) {
+            border-left: 6px solid #4cd137;
+        }
 
-            .contact-info a {
-                color: #00a8ff; /* Голубой цвет ссылок */
-                text-decoration: none;
-                font-weight: bold;
-                transition: color 0.3s ease;
-            }
+        ul li:nth-child(odd) {
+            margin-left: 15px;
+        }
 
-            .contact-info a:hover {
-                color: #4cd137; /* Зеленый цвет при наведении */
-                text-decoration: underline;
-            }
+        .contact-info {
+            margin-top: 30px;
+        }
 
-            hr {
-                border: none;
-                height: 2px;
-                background: #00a8ff; /* Голубая линия */
-                margin: 20px 0;
-            }
+        .contact-info p, .contact-info a {
+            margin: 5px 0;
+            font-size: 1.1rem;
+        }
 
-            p {
-                font-size: 1rem;
-                line-height: 1.5;
-                margin: 10px 0;
-            }
+        .contact-info a {
+            color: #00a8ff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            display: block;
+        }
 
-            .contact-info p {
-                margin: 5px 0;
-                font-size: 1.1rem;
-            }
+        .contact-info a:hover {
+            color: #4cd137;
+            text-decoration: underline;
+        }
 
-            .contact-info a {
-                display: block;
-                margin: 5px 0;
-                font-size: 1.1rem;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
-
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Bogdan Alenovich Rudenko</h1>
-            <p><strong>Data Science, Machine Learning</strong></p>
-            <hr>
-            <p><strong>Bio: </strong>AI enthusiast, theoretical physicist, astronomer</p>
-            
-            <h2>Skills:</h2>
-            <ul>
-                
-                    
-                    <li><strong>Python for data analysis</strong></li>
-                    
-                
-                    
-                    <li>NumPy, Pandas</li>
-                    
-                
-                    
-                    <li><strong>ML and DL</strong></li>
-                    
-                
-                    
-                    <li>Sklearn, Pytorch</li>
-                    
-                
-                    
-                    <li><strong>Data Visualisation</strong></li>
-                    
-                
-                    
-                    <li>Matplotlib, Seaborn, Plotly, Bokeh</li>
-                    
-                
-                    
-                    <li><strong>Math</strong></li>
-                    
-                
-                    
-                    <li>Calculus, linear algebra, probability theory, mathematical statistics</li>
-                    
-                
-            </ul>        
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bogdan Alenovich Rudenko</h1>
+        <p><strong>Data Science, Machine Learning</strong></p>
+        <hr>
+        <p><strong>Bio: </strong>AI enthusiast, theoretical physicist, astronomer</p>
 
-            <h2>Contact Information:</h2>
-            <div class="contact-info">
-                <p>Email: <a href="mailto:rudenko.ba03@gmail.com">rudenko.ba03@gmail.com</a></p>
-                <p>Phone: +7 925 240 27 36</p>
-                <a href="https://github.com/RudenkoBogdan" target="_blank">GitHub</a>
-                <a href="https://www.kaggle.com/rudenkobogdan" target="_blank">Kaggle</a>
-                <a href="https://www.linkedin.com/in/bogdan-rudenko-3bb926323/" target="_blank">LinkedIn</a>
-            </div>
+        <h2>Skills:</h2>
+        <ul>
+            <li><strong>Python for data analysis</strong></li>
+            <li>NumPy, Pandas</li>
+            <li><strong>ML and DL</strong></li>
+            <li>Sklearn, Pytorch</li>
+            <li><strong>Data Visualisation</strong></li>
+            <li>Matplotlib, Seaborn, Plotly, Bokeh</li>
+            <li><strong>Math</strong></li>
+            <li>Calculus, linear algebra, probability theory, mathematical statistics</li>
+        </ul>
+
+        <h2>Contact Information:</h2>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:rudenko.ba03@gmail.com">rudenko.ba03@gmail.com</a></p>
+            <p>Phone: +7 925 240 27 36</p>
+            <a href="https://github.com/RudenkoBogdan" target="_blank">GitHub</a>
+            <a href="https://www.kaggle.com/rudenkobogdan" target="_blank">Kaggle</a>
+            <a href="https://www.linkedin.com/in/bogdan-rudenko-3bb926323/" target="_blank">LinkedIn</a>
         </div>
-    </body>
+    </div>
+</body>
 </html>
